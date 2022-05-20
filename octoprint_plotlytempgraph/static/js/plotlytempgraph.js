@@ -4,7 +4,7 @@ $(function() {
 
 		self.loginState = parameters[0];
 		self.settingsViewModel = parameters[1];
-		self.access = parameters[2];
+		// self.access = parameters[2];
 
 		self.trace_color_index = {};
 		self.trace_color_incrementer = 0;
@@ -975,7 +975,7 @@ $(function() {
 
 	OCTOPRINT_VIEWMODELS.push({
 		construct: PlotlytempgraphViewModel,
-		dependencies: ["loginStateViewModel", "settingsViewModel", "accessViewModel"],
+		dependencies: ["loginStateViewModel", "settingsViewModel"],
 		elements: ["#tab_plugin_plotlytempgraph", "#tab_plugin_plotlytempgraph_link", "#plotly_change_offset_dialog"]
 	});
 });
