@@ -326,6 +326,7 @@ $(function() {
                                 var name_map_color = self.lookup_color(key, subkey);
                                 var name_map_visible = self.lookup_visibility(key, subkey);
 								if(subkey === 'actual' && name_map_visible){
+									Plotly.addAnnotation
 									Plotly.addTraces('plotlytempgraph',{name: name_map_identifier, x: x_data, y: y_data, mode: 'lines', line: {color: name_map_color}, legendgroup: key});
 								} else if(subkey === 'target' && y_data.filter(function(el){return el !== null;}).length > 0 && name_map_visible){
 									Plotly.addTraces('plotlytempgraph',{name: name_map_identifier,x: x_data,y: y_data,mode: 'lines', line: {color: pusher.color(name_map_color).tint(0.5).html(), dash: 'dot'}, legendgroup: key});
@@ -957,6 +958,63 @@ $(function() {
 
 		self.onUserPermissionsChanged = self.onUserLoggedIn = self.onUserLoggedOut = function() {
 			//self.initOrUpdate();
+		};
+
+		self.onEventPrintPaused = function(payload){
+			alert('print paused');
+			Plotly.relayout('plotlytempgraph',{
+					shapes: [{type: 'line',
+                        yref: 'paper', y0:0, y1: 1,
+                        xref: 'x', x0: Date.now(), x1: Date.now(),
+                        line: {color:"MediumPurple",
+                                  width:3,
+                                  dash:"dot"
+		}
+		}]
+                        });
+			Plotly.relayout('plotlytempgraph',{annotations: [
+				{
+				  x: Date.now(),
+				  y: 50,
+				  xref: 'x',
+				  yref: 'y',
+				  text: 'Annotation Text',
+				  yanchor:'bottom',
+				  showarrow: true,
+				  arrowhead: 7,
+				  ax: 0,
+				  ay: -40
+				},]});
+
+		};
+
+		//TODO fix event hook
+		self.onEventPrintStarted = function(payload){
+			alert('print started');
+			Plotly.relayout('plotlytempgraph',{
+					shapes: [{type: 'line',
+                        yref: 'paper', y0:0, y1: 1,
+                        xref: 'x', x0: Date.now(), x1: Date.now(),
+                        line: {color:"MediumPurple",
+                                  width:3,
+                                  dash:"dot"
+		}
+		}]
+                        });
+			Plotly.relayout('plotlytempgraph',{annotations: [
+				{
+				  x: Date.now(),
+				  y: 50,
+				  xref: 'x',
+				  yref: 'y',
+				  text: 'Annotation Text',
+				  yanchor:'bottom',
+				  showarrow: true,
+				  arrowhead: 7,
+				  ax: 0,
+				  ay: -40
+				},]});
+
 		};
 
 		self.onAfterTabChange = function(current, previous){
