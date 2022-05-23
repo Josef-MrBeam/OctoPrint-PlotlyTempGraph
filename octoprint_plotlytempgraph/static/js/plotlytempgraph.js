@@ -961,7 +961,6 @@ $(function() {
 		};
 
 		self.onEventPrintPaused = function(payload){
-			alert('print paused');
 			Plotly.relayout('plotlytempgraph',{
 					shapes: [{type: 'line',
                         yref: 'paper', y0:0, y1: 1,
@@ -978,7 +977,7 @@ $(function() {
 				  y: 50,
 				  xref: 'x',
 				  yref: 'y',
-				  text: 'Annotation Text',
+				  text: 'job paused',
 				  yanchor:'bottom',
 				  showarrow: true,
 				  arrowhead: 7,
@@ -990,7 +989,6 @@ $(function() {
 
 		//TODO fix event hook
 		self.onEventPrintStarted = function(payload){
-			alert('print started');
 			Plotly.relayout('plotlytempgraph',{
 					shapes: [{type: 'line',
                         yref: 'paper', y0:0, y1: 1,
@@ -1007,7 +1005,7 @@ $(function() {
 				  y: 50,
 				  xref: 'x',
 				  yref: 'y',
-				  text: 'Annotation Text',
+				  text: 'job started',
 				  yanchor:'bottom',
 				  showarrow: true,
 				  arrowhead: 7,
