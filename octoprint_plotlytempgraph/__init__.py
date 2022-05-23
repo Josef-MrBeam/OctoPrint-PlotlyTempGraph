@@ -31,21 +31,21 @@ class PlotlytempgraphPlugin(octoprint.plugin.SettingsPlugin,
 				{"identifier": "laser_temp target", "label": "Laser Temp Max", "color": "#f60b0b", "hidden": False},
 
 				#Air filter
-				{"identifier": "dust actual", "label": "Dust", "color": "213d9a", "hidden": False},
-				{"identifier": "dust target", "label": "Dust", "color": "213d9a", "hidden": True},
+				{"identifier": "dust actual", "label": "Dust", "color": "#213d9a", "hidden": False},
+				{"identifier": "dust target", "label": "Dust Max", "color": "#213d9a", "hidden": False},
 
 				{"identifier": "pressure actual", "label": "Pressure", "color": "", "hidden": False},
-				{"identifier": "pressure target", "label": "", "color": "", "hidden": True},
+				{"identifier": "pressure target", "label": "Pressure none", "color": "", "hidden": True},
 
 				{"identifier": "fan_rpm actual", "label": "Fan RPM", "color": "", "hidden": False},
-				{"identifier": "fan_rpm target", "label": "chamber target", "color": "", "hidden": True},
+				{"identifier": "fan_rpm target", "label": "Fan RPM none", "color": "", "hidden": True},
 
 				#compressor
 				{"identifier": "pressure_compressor actual", "label": "Pressure Compressor", "color": "", "hidden": False},
-				{"identifier": "pressure_compressor target", "label": "", "color": "", "hidden": True},
+				{"identifier": "pressure_compressor target", "label": "Pressure Compressor none", "color": "", "hidden": True},
 
 				{"identifier": "rpm_compressor actual", "label": "Pressure RPM", "color": "", "hidden": False},
-				{"identifier": "rpm_compressor target", "label": "", "color": "", "hidden": True},
+				{"identifier": "rpm_compressor target", "label": "Pressure rpm none", "color": "", "hidden": True},
 			],
 			"always_show_legend": True
 		}
