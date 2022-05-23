@@ -25,13 +25,29 @@ class PlotlytempgraphPlugin(octoprint.plugin.SettingsPlugin,
 	def get_settings_defaults(self):
 		return {
 			"max_graph_height": 0,
-			"name_map": [{"identifier": "tool0 actual", "label": "tool0 actual", "color": "", "hidden": False},
-						 {"identifier": "tool0 trget", "label": "tool0 target", "color": "", "hidden": False},
-						 {"identifier": "bed actual", "label": "bed actual", "color": "", "hidden": False},
-						 {"identifier": "bed target", "label": "bed target", "color": "", "hidden": False},
-						 {"identifier": "chamber actual", "label": "chamber actual", "color": "", "hidden": False},
-						 {"identifier": "chamber target", "label": "chamber target", "color": "", "hidden": False}],
-			"always_show_legend": False
+			"name_map": [
+				#lase head
+				{"identifier": "laser_temp actual", "label": "Laser Temp", "color": "#f60b0b", "hidden": False},
+				{"identifier": "laser_temp target", "label": "Laser Temp Max", "color": "#f60b0b", "hidden": False},
+
+				#Air filter
+				{"identifier": "dust actual", "label": "Dust", "color": "213d9a", "hidden": False},
+				{"identifier": "dust target", "label": "Dust", "color": "213d9a", "hidden": True},
+
+				{"identifier": "pressure actual", "label": "Pressure", "color": "", "hidden": False},
+				{"identifier": "pressure target", "label": "", "color": "", "hidden": True},
+
+				{"identifier": "fan_rpm actual", "label": "Fan RPM", "color": "", "hidden": False},
+				{"identifier": "fan_rpm target", "label": "chamber target", "color": "", "hidden": True},
+
+				#compressor
+				{"identifier": "pressure_compressor actual", "label": "Pressure Compressor", "color": "", "hidden": False},
+				{"identifier": "pressure_compressor target", "label": "", "color": "", "hidden": True},
+
+				{"identifier": "rpm_compressor actual", "label": "Pressure RPM", "color": "", "hidden": False},
+				{"identifier": "rpm_compressor target", "label": "", "color": "", "hidden": True},
+			],
+			"always_show_legend": True
 		}
 
 	##~~ AssetPlugin mixin
@@ -59,8 +75,9 @@ class PlotlytempgraphPlugin(octoprint.plugin.SettingsPlugin,
 				displayVersion=self._plugin_version,
 
 				# version check: github repository
-				type="github_release",
-				user="jneilliii",
+				type="github_commit",
+				user="Josef-MrBeam",
+				branch="develop-josef",
 				repo="OctoPrint-PlotlyTempGraph",
 				current=self._plugin_version,
 				stable_branch=dict(
@@ -79,7 +96,7 @@ class PlotlytempgraphPlugin(octoprint.plugin.SettingsPlugin,
 					)
 				],
 				# update method: pip
-				pip="https://github.com/jneilliii/OctoPrint-PlotlyTempGraph/archive/{target_version}.zip"
+				pip="https://github.com/Josef-MrBeam/OctoPrint-PlotlyTempGraph/archive/{target_version}.zip"
 			)
 		)
 
