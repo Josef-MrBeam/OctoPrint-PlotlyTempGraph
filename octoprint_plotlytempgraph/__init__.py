@@ -43,6 +43,9 @@ class PlotlytempgraphPlugin(octoprint.plugin.SettingsPlugin,
 				{"identifier": "fan_rpm actual", "label": "Fan RPM (/100)", "color": "", "hidden": False},
 				{"identifier": "fan_rpm target", "label": "Fan RPM none", "color": "", "hidden": True},
 
+				{"identifier": "fan_pwm actual", "label": "Fan PWM %", "color": "", "hidden": False},
+				{"identifier": "fan_pwm target", "label": "Fan PWM none", "color": "", "hidden": True},
+
 				#compressor
 				{"identifier": "pressure_compressor actual", "label": "Compressor Pressure (/10)", "color": "", "hidden": False},
 				{"identifier": "pressure_compressor target", "label": "Compressor Pressure none", "color": "", "hidden": True},
