@@ -80,7 +80,7 @@ class PlotlytempgraphPlugin(octoprint.plugin.SettingsPlugin,
 				# version check: github repository
 				type="github_commit",
 				user="Josef-MrBeam",
-				branch="develop-josef",
+				branch="develop_josef",
 				repo="OctoPrint-PlotlyTempGraph",
 				current=self._plugin_version,
 				stable_branch=dict(
